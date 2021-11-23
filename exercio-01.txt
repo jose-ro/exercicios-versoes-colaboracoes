@@ -1,6 +1,6 @@
 /*
 
-Data:     22/11/2021 
+Data de Postagem:     22/11/2021 		Data para Entrega:	29/11/2021
     
 Objetivo: 
              Faça um programa,  codificado em C++, que  inicialize uma lista linear
