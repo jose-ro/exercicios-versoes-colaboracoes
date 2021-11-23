@@ -33,3 +33,84 @@ Autor:    Jose Carlos da Rosa
 ********  S O L U Ç Ã O ********
 
 */
+
+/*
+Questão 1
+*/
+#include <cstdlib>
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+#define TAMANHO 30
+
+void inserir(float [], float , int &, int );
+void mostrar(float [], int );
+int percorrer(float [],float , int );
+
+int main( )
+{
+    setlocale(LC_ALL,"Portuguese");
+    float vetNotas[TAMANHO];
+    int contaNotas = 0;
+    float nota;
+    float somaNotas=0, media;
+    int notasAcimaMedia = 0;
+    
+    
+    cout << "\n**** Composicao do vetor. ****" << endl;
+    
+    for (int i = 0; i <= 5; i++)
+    {
+        cout << "\nEntre com a nota " << i + 1 << ": ";
+        cin >> nota;
+        somaNotas+= nota; 
+        inserir(vetNotas,nota,contaNotas,TAMANHO); 
+    }
+     
+    mostrar(vetNotas,contaNotas);
+    
+    media = somaNotas/contaNotas;
+    
+    notasAcimaMedia = percorrer(vetNotas,media,contaNotas);
+    
+    printf ("\nMédia da Turma: %.2f",media);
+    cout << "\nNúmero de notas acima da média é = "
+         << notasAcimaMedia; 
+    
+    cout << "\n\n";
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}
+void inserir(float vet[], float notaAux, int &n, int tamanho) 
+{
+       if (tamanho == n)
+          cout<< "ERRO: Lista cheia.";
+       else
+       {
+           vet[n] = notaAux;
+           n++;
+       }
+}
+void mostrar (float vetNotasAux[], int tamAux)
+{
+     cout << "\n*** Notas da turma: ***";
+     for (int i = 0; i < tamAux; i++)
+     {
+       cout << "\nNota " << i + 1 << ": " 
+            <<vetNotasAux[i]; 
+     }
+}
+
+int percorrer(float vetNotasAux[],float mediaAux, int tamAux)
+{
+    int notasAcima = 0;
+    for (int i = 0; i < tamAux; i++)
+    {
+       if (vetNotasAux[i] > mediaAux)
+          notasAcima ++; 
+    }
+    return  notasAcima ;         
+}
+
