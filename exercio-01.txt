@@ -33,3 +33,75 @@ Autor:    Jose Carlos da Rosa
 ********  S O L U Ç Ã O ********
 
 */
+
+/*
+Questão 2
+*/
+#include <cstdlib>
+#include <iostream>
+#include <time.h>
+#include <locale>
+
+#define TAMANHO 6
+
+using namespace std;
+
+
+int main(int argc, char *argv[])
+{
+    setlocale(LC_ALL,"Portuguese");
+    int vetor[TAMANHO],
+        vetPosicao[TAMANHO],//guarda as posições dos números
+                            //ímpares, na lista vetor[]
+        contaImpares = 0,   //conta a quantidade de números ímpares
+        vetImpares[TAMANHO],                      
+        somaImpar = 0,
+        resto,
+        j = 0;
+    float media; 
+    
+    srand(time(NULL)); 
+     
+    //inserindo dados no vetor[]
+    for (int i = 0; i < TAMANHO; i++)
+    {
+       vetor[i] = rand()%50 + 1;
+       resto =  vetor[i]%2;
+       if (resto != 0)
+       {
+          somaImpar += vetor[i]; 
+          vetPosicao[j] = i;
+          vetImpares[j] = vetor[i]; 
+          contaImpares++;
+          j++;
+       }
+    }
+    
+    media = (float)  somaImpar/contaImpares ;
+    
+    cout << "\n**** Conteúdo do Vetor. ****";
+    for (int i = 0; i < TAMANHO; i++)
+    {
+       cout << "\nElemento " << i + 1 << " é: " <<  vetor[i];
+    } 
+    
+    cout << "\n\n**** Números ímpares e suas posições no Vetor. ****";
+    for (int i = 0; i < contaImpares; i++)
+    {
+       cout << "\nO número " << vetImpares[i]  
+            << " está na posição " <<  vetPosicao[i] + 1;
+    }
+    
+    if (contaImpares == 0)
+       cout << "\nNão há valores ímpares no conteúdo do vetor."; 
+    else if (contaImpares == 1)
+            cout << "\nSó há o valor = " << vetImpares[0] 
+                 << " como impar no vetor."
+                 << " Ele está na posição " <<  vetPosicao[0] + 1;
+         else         
+            printf("\n\nA média dos valores ímpares é: %.2f",media); 
+    
+    cout << "\n\n";
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}
