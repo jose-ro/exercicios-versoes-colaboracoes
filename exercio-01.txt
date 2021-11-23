@@ -1,0 +1,29 @@
+/*
+
+Data:     22/11/2021 
+    
+Objetivo: 
+             Faça um programa,  codificado em C++, que  inicialize uma lista linear
+             sequencial, do tipo vetor, de tamanho 10, para conter números inteiros,
+             randômicos, de semente igual a 60, de acordo com os seguintes procedimentos: 
+                         1.	Inserir (consiste em adicionar os valores na lista), de 
+                            forma não ordenada. Utilizar uma função de nome inserir().
+                         2.	Fazer o percurso da lista (consiste em  percorrer a lista,
+                            imprimindo na tela os seus dados.). Utilizar uma função de
+                            nome percorrer(). 
+                         3.	Gerar uma  segunda lista linear sequencial, do tipo vetor, do
+                            mesmo tamanho da anterior, conforme as regras a seguir,
+                            utilizando uma função de nome produto():
+                            3.1. Se a posição do elemento for par, o elemento do novo
+                                 vetor será    igual ao do primeiro, multiplicado por 5.
+                            3.2. Se a posição do elemento for impar, o elemento do novo
+                                 vetor receberá o resto da divisão do elemento do primeiro
+                                 vetor por 3.
+                         4.	Fazer o percurso da segunda lista(consiste em  percorrer a
+                            lista, imprimindo na tela os seus dados). Utilizar uma função
+                            de nome percorrer(). 
+                         5.	Imprimir a média dos dados da segunda lista. Não há necessidade 
+                            de função específica.
+
+Autor:    Jose Carlos da Rosa
+*/
